@@ -4,8 +4,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "route_model.h"
 
+using std::sort;
+using std::cout;
 
 class RoutePlanner {
   public:
@@ -19,6 +22,8 @@ class RoutePlanner {
     float CalculateHValue(RouteModel::Node const *node);
     std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *);
     RouteModel::Node *NextNode();
+
+    static bool Compare(const RouteModel::Node *a, const RouteModel::Node *b);
 
   private:
     // Add private variables or methods declarations here.
